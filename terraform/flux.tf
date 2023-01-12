@@ -26,7 +26,7 @@ resource "kubernetes_secret" "main" {
 
   data = {
     username = "git"
-    password = jsondecode(data.aws_secretsmanager_secret_version.flux.secret_string)["token"]
+    password = var.flux_token
   }
 }
 
